@@ -43,7 +43,7 @@ cachePath="$HOME/.cache"
 # This feature is disabled by default but you can enable
 # it here like:
 # darkmode_enable="true"
-darkmode_enable="true"
+# darkmode_enable="true"
 
 # And if darkmode is enabled, use these two lines
 # to set the the external command to run on day / night.
@@ -262,12 +262,6 @@ Sunpaper Option Flags (flags cannot be combined)
 
 -h, --help,     Help! Show the option flags available.
 
-elif [ "$currenttime" -ge "$twilightLate" ] && [ "$currenttime" -lt "$sunset" ]; then
-
-	if [[ $currentpaper != 8 ]]; then
-    	setwallpaper -m $wallpaperMode $wallpaperPath/8.jpg
-    	sed -i s/./8/g $HOME/.cache/sunpaper.cache
-	fi
 -r, --report,   Report! Show a table of all the time 
                 events for the wallpaper today.
 
@@ -352,8 +346,6 @@ fi
 
 set_cache
 set_paper
->>>>>>> 98b56420ac1189a8c8ccde178cf0a3b90e5f45bc
-
 if [ "$waybar_enable" == "true" ]; then
     show_suntimes_waybar
 fi
